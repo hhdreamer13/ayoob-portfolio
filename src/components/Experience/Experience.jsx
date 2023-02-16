@@ -5,7 +5,7 @@ const Experience = () => {
         <div className="carousel-item">
           <div className="card w-96 bg-base-300 shadow-xl">
             <figure>
-              <img src="/Picture 1.jpg" alt="Shoes" />
+              <img src="/Picture 1.jpg" alt="none" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
@@ -15,7 +15,6 @@ const Experience = () => {
               <p>Tutoring Data Science in Business with Python</p>
               <div className="card-actions justify-end">
                 <div className="badge-outline badge">Python</div>
-                <div className="badge-outline badge">Matlab</div>
               </div>
             </div>
           </div>
@@ -23,16 +22,15 @@ const Experience = () => {
         <div className="carousel-item">
           <div className="card w-96 bg-base-300 shadow-xl">
             <figure>
-              <img src="/Picture 1.jpg" alt="Shoes" />
+              <img src="/Picture 3.jpg" alt="none" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
                 The University of Sydney
-                <div className="badge-secondary badge">2019</div>
+                <div className="badge-secondary badge">2020</div>
               </h2>
-              <p>Tutoring Data Science in Business with Python</p>
+              <p>Tutoring Simulation and Numerical Solution with MATLAB</p>
               <div className="card-actions justify-end">
-                <div className="badge-outline badge">Python</div>
                 <div className="badge-outline badge">Matlab</div>
               </div>
             </div>
@@ -41,14 +39,14 @@ const Experience = () => {
         <div className="carousel-item">
           <div className="card w-96 bg-base-300 shadow-xl">
             <figure>
-              <img src="/Picture 1.jpg" alt="Shoes" />
+              <img src="/Picture 2.jpg" alt="none" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">
                 The University of Sydney
-                <div className="badge-secondary badge">2019</div>
+                <div className="badge-secondary badge">2022</div>
               </h2>
-              <p>Tutoring Data Science in Business with Python</p>
+              <p>Tutoring IoT for Critical Infrastructure</p>
               <div className="card-actions justify-end">
                 <div className="badge-outline badge">Python</div>
                 <div className="badge-outline badge">Matlab</div>
