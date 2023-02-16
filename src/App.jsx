@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
+import Projects from "./components/Projects/Projects";
+import AboutMe from "./components/AboutMe/AboutMe";
+import Footer from "./components/Footer/Footer";
+import BackgroundAnimation from "./components/BackgroundAnimation/BackgroundAnimation";
+import ContactMe from "./components/ContactMe/ContactMe";
+import Education from "./components/Education/Education";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <Router>
+      <Header />
+      <section className="relative mt-32 pb-32">
+        <div className="w-full md:w-4/5">
+          <Hero />
+        </div>
+        <div className="absolute bottom-2/3 left-1/3 -z-10 w-2/5 md:bottom-1/3 md:left-1/2 lg:absolute">
+          <BackgroundAnimation />
+        </div>
+      </section>
+      <AboutMe />
+      <Education />
+      <Projects />
+      <ContactMe />
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+export default App;
