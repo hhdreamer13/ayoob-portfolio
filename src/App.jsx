@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import BackgroundAnimation from "./components/BackgroundAnimation/BackgroundAnimation";
 import ContactMe from "./components/ContactMe/ContactMe";
 import Education from "./components/Education/Education";
+import Experience from "./components/Experience/Experience";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <AboutMe />
       <Education />
       <Projects />
+      <Experience />
       <ContactMe />
       <Footer />
     </Router>

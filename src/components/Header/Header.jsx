@@ -60,7 +60,7 @@ const Header = () => {
           })}
 
           <li className="">
-            <label className="swap swap-rotate">
+            <label className="swap-rotate swap">
               <input type="checkbox" onClick={toggleTheme} />
               <FaSun className="swap-on h-5 w-5 fill-current" />
               <FaMoon className="swap-off h-5 w-5 fill-current" />

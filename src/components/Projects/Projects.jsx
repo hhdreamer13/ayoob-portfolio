@@ -9,6 +9,7 @@ const Projects = () => {
           return (
             <div
               key={i}
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
               tabIndex={0}
               className="collapse-arrow rounded-box collapse border border-base-300 bg-base-100 hover:bg-base-200"
             >
