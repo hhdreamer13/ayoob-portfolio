@@ -4,6 +4,7 @@ import { publicationList } from "./publicationList";
 
 const Projects = () => {
   const [isMore, setIsMore] = useState(false);
+  // const [isLess, setIsLess] = useState(false);
   const [showingItems, setShowingItems] = useState([]);
 
   useEffect(() => {
@@ -18,6 +19,11 @@ const Projects = () => {
     if (showingItems.length + 3 > publicationList.length) {
       setIsMore(false);
     }
+  };
+
+  const handleLess = () => {
+    setShowingItems([...publicationList.slice(0, 3)]);
+    setIsMore(true);
   };
 
   return (
@@ -63,6 +69,11 @@ const Projects = () => {
       {isMore && (
         <button className=" btn-ghost btn-wide btn my-10" onClick={handleMore}>
           Show More
+        </button>
+      )}
+      {isMore || (
+        <button className=" btn-ghost btn-wide btn my-10" onClick={handleLess}>
+          Show Less
         </button>
       )}
     </div>
