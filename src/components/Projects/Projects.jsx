@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { TbExternalLink } from "react-icons/tb";
 import { publicationList } from "./publicationList";
 
 const Projects = () => {
+  const scrollToRef = useRef();
+  console.log(scrollToRef.current);
+
   const [isMore, setIsMore] = useState(false);
-  // const [isLess, setIsLess] = useState(false);
   const [showingItems, setShowingItems] = useState([]);
 
   useEffect(() => {
@@ -24,12 +26,16 @@ const Projects = () => {
   const handleLess = () => {
     setShowingItems([...publicationList.slice(0, 3)]);
     setIsMore(true);
+    if (scrollToRef.current) scrollToRef.current.scrollIntoView();
   };
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-base-200">
       <section className="mt-20 items-center justify-center">
-        <h2 className="relative mx-auto text-center text-2xl font-bold">
+        <h2
+          ref={scrollToRef}
+          className="relative mx-auto text-center text-2xl font-bold"
+        >
           <span className="py-0 px-4">My Researches</span>
         </h2>
       </section>
