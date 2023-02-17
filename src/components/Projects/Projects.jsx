@@ -1,64 +1,70 @@
+import { useState, useEffect } from "react";
 import { TbExternalLink } from "react-icons/tb";
 import { publicationList } from "./publicationList";
 
 const Projects = () => {
-  return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center bg-base-200">
-      <ul className="menu rounded-box menu-compact w-3/4 bg-base-100 p-2">
-        {publicationList.map(({ title, authors, booktitle, link }, i) => {
-          return (
-            <div
-              key={i}
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-              tabIndex={0}
-              className="collapse-arrow rounded-box collapse border border-base-300 bg-base-100 hover:bg-base-200"
-            >
-              <input type="checkbox" className="peer" />
+  const [isMore, setIsMore] = useState(false);
+  const [showingItems, setShowingItems] = useState([]);
 
-              <div className="collapse-title">
-                <span className="text-color h-20 font-mono">{`${
-                  i + 1
-                }. `}</span>
-                {title}
-              </div>
-              <div className="collapse-content flex justify-center">
-                <div key={i} className="mockup-code w-4/5">
-                  {/* <h2 className="text-color absolute left-1/2 top-3 -translate-x-1/2 transform">
-                    {`~/ayoob/publications/${booktitle.name}-${i + 1}`}
-                  </h2> */}
-                  {/* <pre data-prefix=">" className="mt-10 whitespace-pre-line">
-                    <code>title</code>
-                    <p className="ml-14 mt-2">{title}</p>
-                  </pre> */}
-                  <pre
-                    data-prefix=">"
-                    className="mt-10 whitespace-pre-line text-warning"
-                  >
-                    <code>authors</code>
-                    <p className="ml-14 mt-2">{authors}</p>
+  useEffect(() => {
+    setShowingItems([...publicationList.slice(0, 3)]);
+    setIsMore(true);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleMore = () => {
+    setShowingItems([...publicationList.slice(0, showingItems.length + 3)]);
+    if (showingItems.length + 3 > publicationList.length) {
+      setIsMore(false);
+    }
+  };
+
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-base-200">
+      <section className="mt-20 items-center justify-center">
+        <h2 className="relative mx-auto text-center text-2xl font-bold">
+          <span className="py-0 px-4">My Researches</span>
+        </h2>
+      </section>
+      <ul className="menu rounded-box menu-compact p-2">
+        {showingItems.map(({ title, authors, booktitle, link }, i) => {
+          return (
+            <div key={i}>
+              <div className="hover: card my-2 bg-base-300 text-primary-content duration-500 hover:scale-105">
+                <div className="card-body">
+                  <p>
+                    {" "}
+                    <span className="text-color h-20 font-mono">{`${
+                      i + 1
+                    }. `}</span>
+                    {title}
+                  </p>
+                  <div className="card-actions justify-end">
+                    <a href={link} target="_blank" rel="noreferrer">
+                      <TbExternalLink
+                        size="1.5rem"
+                        className="absolute bottom-4 right-4 hover:opacity-75"
+                      />
+                    </a>
+                  </div>
+                  <pre className="whitespace-pre-line text-warning">
+                    <p>{authors}</p>
                   </pre>
-                  <pre
-                    data-prefix=">"
-                    className="mt-10 whitespace-pre-line text-success"
-                  >
-                    <code>{booktitle.name}</code>
-                    <p className="ml-14 mt-2">
-                      {`${booktitle.titre} - ${booktitle.year}`}
-                    </p>
+                  <pre className="whitespace-pre-line text-success">
+                    <p>{`${booktitle.titre} - ${booktitle.year}`}</p>
                   </pre>
-                  <br />
-                  <a href={link} target="_blank" rel="noreferrer" className="">
-                    <TbExternalLink
-                      size="1.5rem"
-                      className="absolute bottom-4 right-4"
-                    />
-                  </a>
                 </div>
               </div>
             </div>
           );
         })}
       </ul>
+      {isMore && (
+        <button className=" btn-ghost btn-wide btn my-10" onClick={handleMore}>
+          Show More
+        </button>
+      )}
     </div>
   );
 };
