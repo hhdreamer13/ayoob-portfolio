@@ -16,19 +16,16 @@ const AboutMe = () => {
                   <hr className="mb-0 ml-4 inline-block w-1/2 flex-none bg-slate-600 p-0" />
                 </section>
                 <p className="text-justify">
-                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                  assumenda excepturi exercitationem quasi. In deleniti eaque
-                  aut repudiandae et a id nisi.
-                </p>
-                <p className="text-justify">
-                  Picanha pork loin tail beef frankfurter shank porchetta.
-                  Burgdoggen corned beef tenderloin boudin chuck. T-bone
-                  pancetta jowl alcatra. Venison short ribs tail strip steak,
-                  picanha meatball turkey doner bacon tenderloin shoulder. Beef
-                  ribs chuck hamburger tongue pork loin ball tip pork sausage.
-                  Meatball frankfurter flank kevin, t-bone short ribs turducken
-                  tenderloin boudin salami. Ribeye porchetta capicola, turkey
-                  jerky shoulder beef ribs. Andouille beef ribs venison tail.
+                  I have a Bachelor&apos;s degree from Iran University of
+                  Science and Technology and a Master&apos;s degree from Korea
+                  Advanced Institute of Science and Technology, both in
+                  Electrical Engineering. After completing my Master&apos;s
+                  degree, I worked as an engineer at FWUTech for over a year,
+                  gaining valuable field experience. I am currently a PhD
+                  candidate at the prestigious University of Sydney, where my
+                  research focuses on machine learning applications in 6G. I
+                  expect to finish my PhD by June 2023, which will further
+                  solidify my skills and expertise in this field.
                 </p>
                 <ul className="grid grid-cols-2 font-mono">
                   <section>

@@ -4,7 +4,6 @@ import { publicationList } from "./publicationList";
 
 const Projects = () => {
   const scrollToRef = useRef();
-  console.log(scrollToRef.current);
 
   const [isMore, setIsMore] = useState(false);
   const [showingItems, setShowingItems] = useState([]);
