@@ -1,10 +1,11 @@
 import { Link, useParams } from "react-router-dom";
-import { experienceList } from "../components/ExperienceItem/experienceData";
+import { experienceList } from "./experienceData";
+
 const ExperienceDetail = () => {
   const { id } = useParams();
   const [result] = experienceList.filter((item) => item.id === id);
   return (
-    <div className="card flex min-h-screen items-center justify-center bg-neutral">
+    <div className="flex min-h-screen items-center justify-center bg-neutral">
       <div className="card bg-base-100 shadow-xl">
         <div className="card-body">
           <div className="card-actions justify-end">

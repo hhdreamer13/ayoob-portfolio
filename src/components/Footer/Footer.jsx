@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="text-color footer footer-center bg-base-100 p-4 ">
-      <div className="flex">
-        <div className="relative">
+    <footer className="text-color bg-neutral p-4">
+      <div className="flex items-center justify-center gap-4">
+        <div className="">
           <svg
             version="1.0"
             xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ const Footer = () => {
           </svg>
         </div>
 
-        <p>
+        <p className="text-md prefix-color">
           Copyright © 2023 <br />
           All rights reserved
         </p>

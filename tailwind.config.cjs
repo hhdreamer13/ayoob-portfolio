@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{html,js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: '"Fira Code"',
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
@@ -10,15 +14,20 @@ module.exports = {
       {
         night: {
           ...require("daisyui/src/colors/themes")["[data-theme=night]"],
-          primary: "#1C4E80",
-          ".text-color": {
-            color: "#94a3b8",
+          ".prefix-color": {
+            color: "#a2a6a8",
+          },
+          ".bg-base-light": {
+            background: "#112240",
           },
         },
         dracula: {
           ...require("daisyui/src/colors/themes")["[data-theme=dracula]"],
-          ".text-color": {
+          ".prefix-color": {
             color: "#ffffff",
+          },
+          ".bg-base-light": {
+            background: "#112240",
           },
         },
       },

@@ -1,10 +1,34 @@
+import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FaMoon, FaSun } from "react-icons/fa";
+// import { FaMoon, FaSun } from "react-icons/fa";
+
+const navItems = ["About", "Education", "Research", "Experience", "Contact"];
+
+// Classnames shorthand
+const navBarClass =
+  "navbar sticky top-0 z-30 flex h-fit w-screen justify-between bg-opacity-70 py-2 backdrop-blur backdrop-filter md:h-16";
 
 const Header = () => {
-  const navItems = ["About", "Education", "Research", "Contact"];
+  const [isOpen, setIsOpen] = useState(false);
 
+  // Scroll to a section
+  const scrollHandle = (e) => {
+    setIsOpen(false);
+    const position = document.getElementById(e.target.text.toLowerCase());
+
+    // Waiting for burger menu div to be closed
+    setTimeout(() => {
+      position &&
+        position.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, "1");
+  };
+
+  // Scroll to top
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Theme selection
   const [theme, setTheme] = useState("night");
   const toggleTheme = () => {
     setTheme(theme === "night" ? "dracula" : "night");
@@ -14,25 +38,33 @@ const Header = () => {
   }, [theme]);
 
   return (
-    <div className="text-color navbar sticky top-0 z-30 bg-base-100 bg-opacity-50 backdrop-blur backdrop-filter">
-      <div className="flex-1">
-        <Link className="btn-ghost btn text-xl normal-case">
-          <span className="fill-slate-400">
-            <svg
-              version="1.0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="30.000000pt"
-              height="30.000000pt"
-              viewBox="0 0 512.000000 512.000000"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <g
-                transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-                // fill="#ffffff"
-                stroke="none"
-              >
-                <path
-                  d="M2644 4465 c-147 -77 -251 -176 -373 -359 -461 -687 -1512 -2859
+    <nav
+      className={`${navBarClass} ${isOpen ? "bg-base-light" : "bg-base-200"}`}
+    >
+      <Link
+        to="/"
+        className="self-start"
+        onClick={() => {
+          scrollTop();
+          toggleTheme();
+        }}
+      >
+        <svg
+          className="fill-slate-400 duration-300 hover:fill-slate-200"
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="30.000000pt"
+          height="30.000000pt"
+          viewBox="0 0 512.000000 512.000000"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g
+            transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+            // fill="#ffffff"
+            stroke="none"
+          >
+            <path
+              d="M2644 4465 c-147 -77 -251 -176 -373 -359 -461 -687 -1512 -2859
 -1548 -3196 -9 -85 17 -159 75 -219 69 -71 155 -89 258 -54 68 23 154 113 224
 233 120 207 543 641 805 827 165 116 398 246 590 328 61 26 112 50 115 53 3 2
 -35 2 -85 -1 -104 -7 -242 -40 -370 -89 -133 -52 -133 -52 -90 -23 115 75 651
@@ -43,32 +75,61 @@ const Header = () => {
 -313 870 -58 27 -76 25 -153 -15z m106 -1560 c54 -220 97 -401 96 -402 -1 -1
 -72 -18 -156 -38 -182 -41 -365 -91 -544 -146 -70 -22 -129 -39 -131 -37 -4 6
 388 875 526 1163 l53 110 29 -125 c16 -69 73 -305 127 -525z"
-                />
-              </g>
-            </svg>
-          </span>
-        </Link>
+            />
+          </g>
+        </svg>
+      </Link>
+      <div
+        className={
+          isOpen ? "flex w-screen flex-col gap-4 md:inline" : "hidden md:inline"
+        }
+      >
+        {navItems.map((item) => {
+          return (
+            <NavLink
+              onClick={scrollHandle}
+              className="mx-0.5 inline-flex items-center justify-center rounded-md py-4 px-4 text-center font-mono text-sm text-slate-400 transition duration-500 hover:text-slate-50"
+              key={item}
+              to={{ hash: `#${item.toLowerCase()}` }}
+            >
+              {/* <span className="prefix-color">0{i + 1}. </span> */}
+              {item}
+            </NavLink>
+          );
+        })}
       </div>
-      <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          {navItems.map((item) => {
-            return (
-              <li key={item} className="mr-1 ml-1">
-                <Link to={{ hash: `#${item.toLowerCase()}` }}>{item}</Link>
-              </li>
-            );
-          })}
-
-          <li className="">
-            <label className="swap-rotate swap">
-              <input type="checkbox" onClick={toggleTheme} />
-              <FaSun className="swap-on h-5 w-5 fill-current" />
-              <FaMoon className="swap-off h-5 w-5 fill-current" />
-            </label>
-          </li>
-        </ul>
-      </div>
-    </div>
+      {/* Mobile navbar toggle button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="group relative mx-1 inline self-start md:hidden"
+      >
+        <div className="relative flex h-[50px] w-[50px] transform items-center justify-center rounded-full shadow-md  transition-all duration-200 ">
+          <div
+            className={
+              isOpen
+                ? "flex h-[20px] w-[20px] origin-center -rotate-[45deg] transform flex-col justify-between transition-all duration-300"
+                : "flex h-[20px] w-[20px] origin-center transform flex-col justify-between transition-all duration-300"
+            }
+          >
+            <div
+              className={
+                isOpen
+                  ? "h-[1px] w-1/2 origin-right -translate-y-[1px] -rotate-90 transform rounded bg-slate-400 transition-all delay-75 duration-300"
+                  : "h-[2px] w-1/2 origin-right transform rounded bg-slate-400 transition-all delay-75 duration-300 "
+              }
+            ></div>
+            <div className="h-[1px] rounded bg-slate-400"></div>
+            <div
+              className={
+                isOpen
+                  ? "h-[1px] w-1/2 origin-left translate-y-[1px] -rotate-90 transform self-end rounded bg-slate-400 transition-all delay-75 duration-300"
+                  : "h-[2px] w-1/2 origin-left transform self-end rounded bg-slate-400 transition-all delay-75 duration-300"
+              }
+            ></div>
+          </div>
+        </div>
+      </button>
+    </nav>
   );
 };
 

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home/Home";
-import ExperienceDetail from "./ExperienceDeatail/ExperienceDetail";
+import ExperienceDetail from "./components/Experience/ExperienceDetail";
 
 function App() {
   return (
