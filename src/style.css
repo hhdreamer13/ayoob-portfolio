@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Josefin+Sans&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Josefin+Sans&family=Oswald:wght@500&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Josefin+Sans&family=Oswald:wght@500&family=Quicksand&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;

@@ -31,7 +31,7 @@ const Header = () => {
   // Theme selection
   const [theme, setTheme] = useState("night");
   const toggleTheme = () => {
-    setTheme(theme === "night" ? "dracula" : "night");
+    setTheme(theme === "night" ? "pastel" : "night");
   };
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);
@@ -88,7 +88,7 @@ const Header = () => {
           return (
             <NavLink
               onClick={scrollHandle}
-              className="mx-0.5 inline-flex items-center justify-center rounded-md py-4 px-4 text-center font-mono text-sm text-slate-400 transition duration-500 hover:text-slate-50"
+              className="mx-0.5 inline-flex items-center justify-center rounded-md py-4 px-4 text-center font-mono text-sm text-stone-400 transition duration-500 hover:text-slate-50"
               key={item}
               to={{ hash: `#${item.toLowerCase()}` }}
             >

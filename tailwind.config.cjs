@@ -14,16 +14,16 @@ module.exports = {
       {
         night: {
           ...require("daisyui/src/colors/themes")["[data-theme=night]"],
-          ".prefix-color": {
-            color: "#a2a6a8",
+          ".color-primary": {
+            color: "#94a3b8",
           },
           ".bg-base-light": {
             background: "#112240",
           },
         },
-        dracula: {
-          ...require("daisyui/src/colors/themes")["[data-theme=dracula]"],
-          ".prefix-color": {
+        pastel: {
+          ...require("daisyui/src/colors/themes")["[data-theme=pastel]"],
+          ".color-primary": {
             color: "#ffffff",
           },
           ".bg-base-light": {
