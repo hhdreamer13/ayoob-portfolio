@@ -1,7 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import { experienceList } from "./experienceData";
+import { useEffect } from "react";
 
 const ExperienceDetail = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
   const { id } = useParams();
   const [result] = experienceList.filter((item) => item.id === id);
   return (
@@ -9,7 +13,10 @@ const ExperienceDetail = () => {
       <div className="card bg-base-100 shadow-xl">
         <div className="card-body">
           <div className="card-actions justify-end">
-            <Link to="/#experience" className="btn-square btn-sm btn">
+            <Link
+              to="/#experience"
+              className="btn-square btn-sm btn text-slate-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -26,13 +33,15 @@ const ExperienceDetail = () => {
               </svg>
             </Link>
           </div>
-          <article className="prose text-justify">
-            <h2>{result.title}</h2>
-            <p>{result.description}</p>
+          <article className="prose text-justify font-['Roboto'] text-lg sm:text-xl">
+            <h2 className="text-left text-slate-300">{result.title}</h2>
+            <p className="font-['Roboto'] text-xl leading-loose text-slate-400 md:text-lg md:leading-loose">
+              {result.description}
+            </p>
             <p>
               {result.location} - {result.year}
             </p>
-            <div className="badge badge-outline">
+            <div className="badge-outline badge">
               <p>{result.badge}</p>
             </div>
           </article>

@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="text-color bg-neutral p-4">
       <div className="flex items-center justify-center gap-4">
-        <div className="">
+        <div className="relative">
           <svg
             version="1.0"
             xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +103,7 @@ const Footer = () => {
           >
             <g
               transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-              fill="#94A3B8"
+              fill="#cbd5e1"
               stroke="none"
             >
               <path
@@ -135,7 +135,7 @@ const Footer = () => {
           </svg>
         </div>
 
-        <p className="text-md prefix-color">
+        <p className="text-md text-stone-400">
           Copyright © 2023 <br />
           All rights reserved
         </p>

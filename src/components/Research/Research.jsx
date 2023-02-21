@@ -29,12 +29,18 @@ const Research = () => {
   };
 
   return (
-    <div id="research" className="min-h-screen" ref={scrollToRef}>
+    <div
+      id="research"
+      className="min-h-screen bg-gradient-to-b from-base-100 to-base-300"
+      ref={scrollToRef}
+    >
       <div className="bg-base-200 px-2 py-10">
         <div className="flex flex-col items-center justify-center ">
           <section className="items-center justify-center py-10">
             <h2 className="relative mx-auto text-center text-2xl font-bold">
-              <span className="py-0 px-4">My Researches</span>
+              <span className="py-0 px-4 font-['Quicksand'] text-4xl text-slate-300">
+                My Researches
+              </span>
             </h2>
           </section>
           <ul className="menu rounded-box menu-compact p-2">

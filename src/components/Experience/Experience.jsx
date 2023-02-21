@@ -17,9 +17,14 @@ const Experience = () => {
   }, [location]);
 
   return (
-    <div id="experience" className="min-h-screen py-10 px-2">
+    <div
+      id="experience"
+      className="min-h-screen bg-gradient-to-b from-base-100 to-base-300 py-10 px-2"
+    >
       <div className="flex flex-col items-center justify-center">
-        <h2 className="text-color my-14 text-2xl font-bold">My Experiences</h2>
+        <h2 className="my-14 font-['Quicksand'] text-4xl text-slate-300">
+          My Experiences
+        </h2>
         <div
           id="test2"
           className="carousel-center carousel rounded-box w-3/4 space-x-4 bg-neutral p-4 md:w-4/5"
@@ -35,7 +40,7 @@ const Experience = () => {
                     <h2 className="card-title hidden text-sm md:block md:text-xl">
                       {location}
                     </h2>
-                    <div className="badge badge-secondary text-xs md:text-base">
+                    <div className="badge-secondary badge text-xs md:text-base">
                       {year}
                     </div>
                     <p className="text-sm md:text-base">{title}</p>
