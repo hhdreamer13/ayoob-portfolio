@@ -17,7 +17,7 @@ const AboutMe = () => {
     >
       <div className="group flex flex-col items-center justify-center md:flex-row-reverse md:gap-20 md:px-20">
         <img
-          src="/profile-photo.png"
+          src="/profile-photo.webp"
           className="my-10 w-56 rounded-lg object-cover shadow-2xl shadow-black grayscale transition duration-1000 ease-in-out group-hover:scale-105 group-hover:grayscale-0 md:w-80 "
           alt="profile"
         />
