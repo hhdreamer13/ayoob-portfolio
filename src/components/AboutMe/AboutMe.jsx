@@ -1,27 +1,28 @@
 const AboutMe = () => {
   const competences = [
-    "Matlab",
     "Python",
+    "Matlab",
+    "HFSS",
+    "CST",
+    "OrCAD",
+    "SPICE",
     "ThingsBoard",
-    "CellSens",
-    "CPLEX",
-    "Photoshop",
-    "LaTex",
-    "Test",
+    "Node-Red",
   ];
+
   return (
     <div
       id="about"
       className="min-h-screen bg-gradient-to-b from-base-100 to-base-300 px-8 py-10"
     >
-      <div className="flex flex-col items-center justify-center md:flex-row-reverse md:gap-20 md:px-20">
+      <div className="group flex flex-col items-center justify-center md:flex-row-reverse md:gap-20 md:px-20">
         <img
           src="/profile-photo.png"
-          className="my-10 w-56 rounded-lg object-cover shadow-2xl grayscale transition duration-1000 ease-in-out hover:scale-105 hover:grayscale-0 md:w-80 "
+          className="my-10 w-56 rounded-lg object-cover shadow-2xl shadow-black grayscale transition duration-1000 ease-in-out group-hover:scale-105 group-hover:grayscale-0 md:w-80 "
           alt="profile"
         />
         <article className="text-justify text-slate-400">
-          <h2 className="flex-none py-6 font-['Quicksand'] text-4xl text-slate-300">
+          <h2 className="flex-none py-6 font-['Cambay'] text-4xl text-slate-300">
             About Me
           </h2>
           <p className="my-2 mb-4 font-['Roboto'] text-xl leading-loose text-slate-400 md:text-lg md:leading-loose">
@@ -35,7 +36,7 @@ const AboutMe = () => {
             expect to finish my PhD by June 2023, which will further solidify my
             skills and expertise in this field.
           </p>
-          <ul className="grid h-auto w-80 list-none grid-cols-2 pl-0 font-mono text-slate-400">
+          <ul className="grid h-auto w-auto list-none grid-cols-2 pl-0 font-mono text-slate-400 sm:grid-cols-3">
             {competences.map((c) => {
               return (
                 <li

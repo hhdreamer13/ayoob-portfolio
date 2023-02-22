@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { experienceList } from "./experienceData";
 import { useEffect } from "react";
+import { experienceData } from "./experienceData";
 
 const Experience = () => {
   const location = useLocation();
@@ -19,44 +19,48 @@ const Experience = () => {
   return (
     <div
       id="experience"
-      className="min-h-screen bg-gradient-to-b from-base-100 to-base-300 py-10 px-2"
+      className="min-h-screen overflow-hidden bg-gradient-to-b from-base-100 to-base-300 py-10 px-2"
     >
       <div className="flex flex-col items-center justify-center">
-        <h2 className="my-14 font-['Quicksand'] text-4xl text-slate-300">
+        <h2 className="my-14 font-['Cambay'] text-4xl text-slate-300">
           My Experiences
         </h2>
         <div
-          id="test2"
-          className="carousel-center carousel rounded-box w-3/4 space-x-4 bg-neutral p-4 md:w-4/5"
+          id="carousel-container"
+          className="no-scrollbar flex h-96 w-72 snap-x items-center overflow-scroll rounded-2xl bg-[linear-gradient(to_right_top,#051937,#042643,#05334f,#0b4059,#164e63)] px-4 shadow-inner shadow-slate-900 md:h-[500px] md:w-2/3"
         >
-          {experienceList.map(({ id, title, location, year, badge, image }) => {
+          {experienceData.map(({ id, title, location, badge, year, image }) => {
             return (
-              <div key={id} className="carousel-item">
-                <div className="card w-40 bg-base-300 shadow-xl md:w-96">
-                  <figure>
-                    <img src={image} alt="none" />
-                  </figure>
-                  <div className="card-body p-4 md:p-8">
-                    <h2 className="card-title hidden text-sm md:block md:text-xl">
-                      {location}
-                    </h2>
-                    <div className="badge-secondary badge text-xs md:text-base">
+              <div
+                id="carousel-body"
+                key={id}
+                className="group mx-3 h-80 w-60 flex-none snap-center rounded-2xl bg-base-100 shadow-xl md:h-[440px] md:w-80"
+              >
+                <figure id="carousel-image" className="">
+                  <img
+                    src={image}
+                    alt="none"
+                    className="h-40 w-full rounded-t-2xl object-fill duration-500 md:h-[210px] md:grayscale md:group-hover:grayscale-0"
+                  />
+                </figure>
+                <div
+                  id="carousel-content"
+                  className="flex h-40 flex-col items-center justify-between p-4 text-center font-['Roboto'] text-slate-300 md:h-[210px] md:items-start md:text-left"
+                >
+                  <h2 className="md:text-lg md:font-bold">{title}</h2>
+                  <p className="text-sm italic">{location}</p>
+                  <div className="hidden md:block">
+                    <p className="badge badge-outline mr-2">{badge[0]}</p>
+                    <p className="badge badge-accent mr-2  grayscale group-hover:grayscale-0">
                       {year}
-                    </div>
-                    <p className="text-sm md:text-base">{title}</p>
-                    {/* <div className="card-actions hidden justify-end md:inline">
-                      <div className="badge badge-outline text-xs md:p-3 md:text-base">
-                        {badge}
-                      </div>
-                    </div> */}
-
-                    <Link
-                      className="btn-sm btn text-xs font-thin normal-case md:h-12 md:w-40 md:self-center md:font-sans md:text-base md:font-normal"
-                      to={`/details/${id}`}
-                    >
-                      Read More
-                    </Link>
+                    </p>
                   </div>
+                  <Link
+                    to={`/details/${id}`}
+                    className="btn-sm btn font-['Roboto'] normal-case text-slate-300 md:btn md:self-end md:font-['Roboto'] md:normal-case md:text-slate-300"
+                  >
+                    Read More
+                  </Link>
                 </div>
               </div>
             );

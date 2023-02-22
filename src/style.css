@@ -4,7 +4,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Josefin+Sans&family=Quicksand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Josefin+Sans&family=Oswald:wght@500&family=Quicksand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@700&family=Josefin+Sans&family=Oswald:wght@500&family=Quicksand&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cambay:wght@700&family=Expletus+Sans:wght@700&family=Josefin+Sans&family=Oswald:wght@500&family=Quicksand&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

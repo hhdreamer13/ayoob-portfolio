@@ -6,7 +6,7 @@ const navItems = ["About", "Education", "Research", "Experience", "Contact"];
 
 // Classnames shorthand
 const navBarClass =
-  "navbar sticky top-0 z-30 flex h-fit w-screen justify-between bg-opacity-70 py-2 backdrop-blur backdrop-filter md:h-16";
+  "navbar sticky top-0 z-50 flex h-fit w-screen justify-between bg-opacity-70 py-2 backdrop-blur backdrop-filter md:h-16";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

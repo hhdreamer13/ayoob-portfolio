@@ -2,7 +2,7 @@ import BackgroundAnimation from "../BackgroundAnimation/BackgroundAnimation";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen px-8 pt-10">
+    <div className="min-h-screen overflow-hidden px-8 pt-10">
       <div className="relative grid grid-cols-1 lg:grid-cols-4">
         <div className="col-span-1 lg:col-span-3">
           <article className="lg:ml-16">

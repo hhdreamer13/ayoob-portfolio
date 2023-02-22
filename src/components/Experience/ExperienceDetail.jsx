@@ -1,13 +1,13 @@
 import { Link, useParams } from "react-router-dom";
-import { experienceList } from "./experienceData";
+import { experienceData } from "./experienceData";
 import { useEffect } from "react";
 
 const ExperienceDetail = () => {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   });
   const { id } = useParams();
-  const [result] = experienceList.filter((item) => item.id === id);
+  const [result] = experienceData.filter((item) => item.id === id);
   return (
     <div className="flex min-h-screen items-center justify-center bg-neutral">
       <div className="card bg-base-100 shadow-xl">

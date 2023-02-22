@@ -15,7 +15,7 @@ export const educationList = [
     url: "https://www.sydney.edu.au/engineering/our-research/internet-of-things/centre-for-iot-and-telecommunications.html",
     honours: [
       {
-        title: "The University of Sydney Postgraduate Scholarship (Full Scholarship)",
+        title: "The University of Sydney Postgraduate Scholarship (Ph.D.)",
         year: "2019-2023",
       },
       {
@@ -29,7 +29,7 @@ export const educationList = [
     degree: "MSc",
     title: "Electrical Engineering",
     year: "2014-2016",
-    lab: "Wireless Communication Systems Laboratory, School of Electrical Engineering",
+    lab: "Wireless Communication Systems Laboratory, School of Electrical Engineering, ITC Building",
     university: "Korea Advance Institute of Science and Technology (KAIST)",
     location: "Daejeon - Republic of Korea",
     thesis: {
@@ -43,7 +43,7 @@ export const educationList = [
     url: "https://www.kaist.ac.kr/en/",
     honours: [
       {
-        title: "KAIST Postgraduate Scholarship (Full Scholarship)",
+        title: "KAIST Postgraduate Scholarship (M.Sc.) ",
         year: "2014-2016",
       },
     ],
