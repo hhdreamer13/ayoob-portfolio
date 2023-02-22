@@ -23,7 +23,7 @@ const Experience = () => {
     >
       <div className="flex flex-col items-center justify-center">
         <h2 className="my-14 font-['Cambay'] text-4xl text-slate-300">
-          My Experiences
+          My Experience
         </h2>
         <div
           id="carousel-container"
@@ -34,7 +34,7 @@ const Experience = () => {
               <div
                 id="carousel-body"
                 key={id}
-                className="group mx-3 h-80 w-60 flex-none snap-center rounded-2xl bg-base-100 shadow-xl md:h-[440px] md:w-80"
+                className="group mx-3 h-80 w-60 flex-none snap-center rounded-2xl border-2 border-solid border-slate-900 bg-base-100 shadow-xl md:h-[440px] md:w-80"
               >
                 <figure id="carousel-image" className="">
                   <img
@@ -57,7 +57,7 @@ const Experience = () => {
                   </div>
                   <Link
                     to={`/details/${id}`}
-                    className="btn-sm btn font-['Roboto'] normal-case text-slate-300 md:btn md:self-end md:font-['Roboto'] md:normal-case md:text-slate-300"
+                    className="btn-sm btn font-['Roboto'] font-light normal-case text-slate-300 md:btn md:self-end md:font-['Roboto'] md:font-light md:normal-case md:text-slate-300"
                   >
                     Read More
                   </Link>

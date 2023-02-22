@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { FaMoon, FaSun } from "react-icons/fa";
 
-const navItems = ["About", "Education", "Research", "Experience", "Contact"];
+const navItems = ["About", "Education", "Publication", "Experience", "Contact"];
 
 // Classnames shorthand
 const navBarClass =
@@ -46,11 +46,11 @@ const Header = () => {
         className="self-start"
         onClick={() => {
           scrollTop();
-          toggleTheme();
+          // toggleTheme();
         }}
       >
         <svg
-          className="fill-slate-400 duration-300 hover:fill-slate-200"
+          className="ml-1 fill-stone-400 duration-300 hover:fill-slate-200"
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
           width="30.000000pt"
@@ -114,16 +114,16 @@ const Header = () => {
             <div
               className={
                 isOpen
-                  ? "h-[1px] w-1/2 origin-right -translate-y-[1px] -rotate-90 transform rounded bg-slate-400 transition-all delay-75 duration-300"
-                  : "h-[2px] w-1/2 origin-right transform rounded bg-slate-400 transition-all delay-75 duration-300 "
+                  ? "h-[1px] w-1/2 origin-right -translate-y-[1px] -rotate-90 transform rounded bg-stone-400 transition-all delay-75 duration-300"
+                  : "h-[2px] w-1/2 origin-right transform rounded bg-stone-400 transition-all delay-75 duration-300 "
               }
             ></div>
-            <div className="h-[1px] rounded bg-slate-400"></div>
+            <div className="h-[1px] rounded bg-stone-400"></div>
             <div
               className={
                 isOpen
-                  ? "h-[1px] w-1/2 origin-left translate-y-[1px] -rotate-90 transform self-end rounded bg-slate-400 transition-all delay-75 duration-300"
-                  : "h-[2px] w-1/2 origin-left transform self-end rounded bg-slate-400 transition-all delay-75 duration-300"
+                  ? "h-[1px] w-1/2 origin-left translate-y-[1px] -rotate-90 transform self-end rounded bg-stone-400 transition-all delay-75 duration-300"
+                  : "h-[2px] w-1/2 origin-left transform self-end rounded bg-stone-400 transition-all delay-75 duration-300"
               }
             ></div>
           </div>

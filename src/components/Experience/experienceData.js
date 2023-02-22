@@ -7,7 +7,7 @@ export const experienceData = [
       "The project required the development of Radio Patrol software, an intelligent mobile network performance analysis and monitoring system that could connect to various OSS data sources, collect raw data, aggregate, filter, calculate custom KPIs, manage events, generate alarms, and produce  advanced cellular network optimisation reports. As this was a telecom project, the software department lacked KPI calculation expertise. I was responsible for extracting the KPI formulas from the OSS raw data, writing the algorithms, and supervising the programmers to ensure the algorithms were implemented accurately.",
     badge: ["Grafana", "Zabbix"],
     year: "2019",
-    image: "/Picture 1.jpg",
+    image: "/picture-1.webp",
   },
   {
     id: "2",
@@ -19,7 +19,7 @@ export const experienceData = [
     badge: ["Python"],
 
     year: "2018",
-    image: "/Picture 2.png",
+    image: "/picture-2.webp",
   },
   {
     id: "3",
@@ -29,7 +29,7 @@ export const experienceData = [
       "In my tutoring sessions for Data Science in Business with Python, we focused on bridging the gap between introductory statistics and advanced analytics.  We covered a range of topics, including statistics, programming, and business knowledge, as well as other intriguing aspects of data science. The aim of the course was to provide students with a comprehensive understanding of data science and how it is used to inform data-driven business decisions. Using interdisciplinary perspectives and real-world scenarios, we explored the application of data science in various business contexts. Throughout the course, students gained a deep understanding of statistical methods and techniques for data analysis using Python. By the end of the course, students were equipped with the necessary knowledge and skills to apply data science in a business setting, preparing them for real-world challenges in the field.",
     badge: ["Python"],
     year: "2023",
-    image: "/Picture 3.png",
+    image: "/picture-3.webp",
   },
   {
     id: "4",
@@ -41,7 +41,7 @@ export const experienceData = [
     badge: ["MATLAB"],
 
     year: "2021-2022",
-    image: "/Picture 4.png",
+    image: "/picture-4.webp",
   },
   {
     id: "5",
@@ -53,7 +53,7 @@ export const experienceData = [
     badge: ["MATLAB"],
 
     year: "2020-2023",
-    image: "/Picture 5.jpg",
+    image: "/picture-5.webp",
   },
   {
     id: "6",
@@ -65,7 +65,7 @@ export const experienceData = [
     badge: ["Raspberry Pi"],
 
     year: "2021-2022",
-    image: "/Picture 6.png",
+    image: "/picture-6.webp",
   },
   {
     id: "7",
@@ -77,6 +77,6 @@ export const experienceData = [
     badge: ["CST", "HFSS"],
 
     year: "2020",
-    image: "/Picture 7.jpg",
+    image: "/picture-7.webp",
   },
 ];

@@ -11,7 +11,7 @@ const Education = () => {
     >
       <div className="flex flex-col items-center px-8 py-10 sm:w-3/4 sm:justify-center">
         <h2 className="my-6 py-6 font-['Cambay'] text-4xl text-slate-300">
-          My Educations
+          My Education
         </h2>
         <div id="tabs-container">
           <div
@@ -67,8 +67,8 @@ const Education = () => {
                       <h3 className="mb-2 mr-4 block py-2 text-xl text-slate-300 sm:my-8 sm:mr-4 sm:mb-8 sm:inline sm:py-8">
                         {title}
                       </h3>
-                      <div className="badge-primary badge-outline badge badge-md border-cyan-700 md:badge-lg sm:mr-2">
-                        <span className="badge-primary badge badge-sm mr-2 border-cyan-700 bg-cyan-700 md:badge-md md:mr-4">
+                      <div className="badge badge-primary badge-outline badge-md border-cyan-700 md:badge-lg sm:mr-2">
+                        <span className="badge badge-primary badge-sm mr-2 border-cyan-700 bg-cyan-700 md:badge-md md:mr-4">
                           {year}
                         </span>
                         <span className="text-cyan-700">{location}</span>

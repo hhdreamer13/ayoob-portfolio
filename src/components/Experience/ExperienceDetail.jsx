@@ -9,8 +9,8 @@ const ExperienceDetail = () => {
   const { id } = useParams();
   const [result] = experienceData.filter((item) => item.id === id);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-neutral">
-      <div className="card bg-base-100 shadow-xl">
+    <div className="flex min-h-screen items-center justify-center sm:bg-[linear-gradient(to_right_top,#051937,#042643,#05334f,#0b4059,#164e63)]">
+      <div className="card bg-base-200 shadow-xl">
         <div className="card-body">
           <div className="card-actions justify-end">
             <Link
@@ -35,15 +35,22 @@ const ExperienceDetail = () => {
           </div>
           <article className="prose text-justify font-['Roboto'] text-lg sm:text-xl">
             <h2 className="text-left text-slate-300">{result.title}</h2>
-            <p className="font-['Roboto'] text-xl leading-loose text-slate-400 md:text-lg md:leading-loose">
+            <p className=" text-lg leading-loose text-slate-400 md:text-lg md:leading-loose">
               {result.description}
             </p>
-            <p>
+            <p className="font-['Roboto'] text-base italic text-stone-400 ">
               {result.location} - {result.year}
             </p>
-            <div className="badge-outline badge">
-              <p>{result.badge}</p>
-            </div>
+            {result.badge.map((b, i) => {
+              return (
+                <div
+                  key={i}
+                  className="badge badge-outline mr-3 text-slate-400 "
+                >
+                  <p>{b}</p>
+                </div>
+              );
+            })}
           </article>
         </div>
       </div>

@@ -13,7 +13,7 @@ const Footer = () => {
           >
             <g
               transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-              fill="#94A3B8"
+              fill="#737373"
               stroke="none"
             >
               <path
@@ -103,7 +103,7 @@ const Footer = () => {
           >
             <g
               transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-              fill="#cbd5e1"
+              fill="#a8a29e"
               stroke="none"
             >
               <path
