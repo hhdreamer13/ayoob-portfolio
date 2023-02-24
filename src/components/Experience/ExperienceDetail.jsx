@@ -1,6 +1,23 @@
 import { Link, useParams } from "react-router-dom";
 import { experienceData } from "./experienceData";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
+
+const cardAnimations = {
+  hidden: {
+    x: "-100vw",
+  },
+  visible: {
+    x: 0,
+    transition: {
+      duration: 0.8,
+      delay: 0.1,
+      type: "spring",
+      mass: 0.5,
+      stiffness: 100,
+    },
+  },
+};
 
 const ExperienceDetail = () => {
   useEffect(() => {
@@ -10,7 +27,12 @@ const ExperienceDetail = () => {
   const [result] = experienceData.filter((item) => item.id === id);
   return (
     <div className="flex min-h-screen items-center justify-center sm:bg-[linear-gradient(to_right_top,#051937,#042643,#05334f,#0b4059,#164e63)]">
-      <div className="card bg-base-200 shadow-xl">
+      <motion.div
+        variants={cardAnimations}
+        initial="hidden"
+        animate="visible"
+        className="card bg-base-200 shadow-xl"
+      >
         <div className="card-body">
           <div className="card-actions justify-end">
             <Link
@@ -45,7 +67,7 @@ const ExperienceDetail = () => {
               return (
                 <div
                   key={i}
-                  className="badge badge-outline mr-3 text-slate-400 "
+                  className="badge-outline badge mr-3 text-slate-400 "
                 >
                   <p>{b}</p>
                 </div>
@@ -53,7 +75,7 @@ const ExperienceDetail = () => {
             })}
           </article>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

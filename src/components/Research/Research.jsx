@@ -39,7 +39,7 @@ const Research = () => {
           <section className="items-center justify-center py-10">
             <h2 className="relative mx-auto text-center text-2xl font-bold">
               <span className="py-0 px-4 font-['Cambay'] text-4xl text-slate-300">
-                My publication
+                My Publications
               </span>
             </h2>
           </section>

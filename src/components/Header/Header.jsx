@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
-// import { FaMoon, FaSun } from "react-icons/fa";
+import { useState } from "react";
 
 const navItems = ["About", "Education", "Publication", "Experience", "Contact"];
 
@@ -29,13 +28,13 @@ const Header = () => {
   };
 
   // Theme selection
-  const [theme, setTheme] = useState("night");
-  const toggleTheme = () => {
-    setTheme(theme === "night" ? "pastel" : "night");
-  };
-  useEffect(() => {
-    document.querySelector("html").setAttribute("data-theme", theme);
-  }, [theme]);
+  // const [theme, setTheme] = useState("night");
+  // const toggleTheme = () => {
+  //   setTheme(theme === "night" ? "pastel" : "night");
+  // };
+  // useEffect(() => {
+  //   document.querySelector("html").setAttribute("data-theme", theme);
+  // }, [theme]);
 
   return (
     <nav
@@ -92,7 +91,6 @@ const Header = () => {
               key={item}
               to={{ hash: `#${item.toLowerCase()}` }}
             >
-              {/* <span className="prefix-color">0{i + 1}. </span> */}
               {item}
             </NavLink>
           );

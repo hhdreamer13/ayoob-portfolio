@@ -1,6 +1,28 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { educationList } from "./educationData";
 import { BiMedal } from "react-icons/bi";
+
+const sectionAnimation = {
+  hidden: {
+    y: 200,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 1,
+      delay: 0.3,
+      ease: [0, 0.71, 0.2, 1.01],
+      opacity: {
+        duration: 1.1,
+        ease: "easeOut",
+      },
+    },
+  },
+};
 
 const Education = () => {
   const [activeTabId, setActiveTabId] = useState(0);
@@ -59,16 +81,23 @@ const Education = () => {
                 i
               ) => {
                 return (
-                  <article
-                    className={activeTabId !== i ? "hidden" : ""}
+                  <motion.article
                     key={i}
+                    variants={sectionAnimation}
+                    initial="hidden"
+                    animate={activeTabId !== i ? "hidden" : "visible"}
+                    exit={{
+                      y: 0,
+                      opacity: 0,
+                    }}
+                    className={activeTabId !== i ? "hidden" : ""}
                   >
                     <div className="flex flex-col items-center justify-center text-slate-400 sm:block">
-                      <h3 className="mb-2 mr-4 block py-2 text-xl text-slate-300 sm:my-8 sm:mr-4 sm:mb-8 sm:inline sm:py-8">
+                      <h3 className="mb-2 mr-0 block py-2 text-xl text-slate-300 sm:my-8 sm:mr-4 sm:mb-8 sm:inline sm:py-8">
                         {title}
                       </h3>
-                      <div className="badge badge-primary badge-outline badge-md border-cyan-700 md:badge-lg sm:mr-2">
-                        <span className="badge badge-primary badge-sm mr-2 border-cyan-700 bg-cyan-700 md:badge-md md:mr-4">
+                      <div className="badge-primary badge-outline badge badge-md mr-0 border-cyan-700 md:badge-lg sm:mr-2">
+                        <span className="badge-primary badge badge-sm mr-2 border-cyan-700 bg-cyan-700 text-black md:badge-md md:mr-4">
                           {year}
                         </span>
                         <span className="text-cyan-700">{location}</span>
@@ -114,7 +143,7 @@ const Education = () => {
                         </p>
                       </div>
                     </div>
-                  </article>
+                  </motion.article>
                 );
               }
             )}

@@ -23,7 +23,7 @@ const Experience = () => {
     >
       <div className="flex flex-col items-center justify-center">
         <h2 className="my-14 font-['Cambay'] text-4xl text-slate-300">
-          My Experience
+          My Experiences
         </h2>
         <div
           id="carousel-container"
@@ -50,8 +50,8 @@ const Experience = () => {
                   <h2 className="md:text-lg md:font-bold">{title}</h2>
                   <p className="text-sm italic">{location}</p>
                   <div className="hidden md:block">
-                    <p className="badge badge-outline mr-2">{badge[0]}</p>
-                    <p className="badge badge-accent mr-2  grayscale group-hover:grayscale-0">
+                    <p className="badge-outline badge mr-2">{badge[0]}</p>
+                    <p className="badge-accent badge mr-2  grayscale group-hover:grayscale-0">
                       {year}
                     </p>
                   </div>
