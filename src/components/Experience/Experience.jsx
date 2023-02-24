@@ -1,9 +1,23 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { experienceData } from "./experienceData";
 
 const Experience = () => {
   const location = useLocation();
+
+  const cardVariants = {
+    hidden: {
+      boxShadow: "0px 0px 0px rgba(15, 23, 42, 0.7)",
+    },
+    hover: {
+      boxShadow: "0px 12px 10px 1px rgba(15, 23, 42, 0.7)",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   useEffect(() => {
     const position = document.getElementById("experience");
@@ -31,7 +45,10 @@ const Experience = () => {
         >
           {experienceData.map(({ id, title, location, badge, year, image }) => {
             return (
-              <div
+              <motion.div
+                variants={cardVariants}
+                initial="hidden"
+                whileHover="hover"
                 id="carousel-body"
                 key={id}
                 className="group mx-3 h-80 w-60 flex-none snap-center rounded-2xl border-2 border-solid border-slate-900 bg-base-100 shadow-xl md:h-[440px] md:w-80"
@@ -62,7 +79,7 @@ const Experience = () => {
                     Read More
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

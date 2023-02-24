@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const headingAnimation = {
   hidden: {
-    y: 100,
+    y: -50,
     opacity: 0,
   },
   visible: {
@@ -63,14 +63,14 @@ const Hero = () => {
               transition={{
                 type: "tween",
                 duration: 1.2,
-                delay: 0.5,
+                delay: 0.3,
                 ease: [0, 0.71, 0.2, 1.01],
                 opacity: {
                   duration: 1.8,
                   ease: "easeOut",
                 },
               }}
-              className="bg-gradient-to-r from-slate-400 to-white bg-clip-text py-2 text-center font-['Expletus_Sans'] text-8xl font-extrabold normal-case text-transparent md:hidden md:py-4 md:text-8xl lg:mt-10"
+              className="bg-gradient-to-r from-slate-400 to-white bg-clip-text py-2 text-center font-['Expletus_Sans'] text-7xl font-extrabold normal-case text-transparent md:hidden md:py-4 md:text-8xl lg:mt-10"
             >
               AYOOB
             </motion.h1>
@@ -81,14 +81,14 @@ const Hero = () => {
               transition={{
                 type: "tween",
                 duration: 1.2,
-                delay: 0.7,
+                delay: 0.8,
                 ease: [0, 0.71, 0.2, 1.01],
                 opacity: {
                   duration: 1.8,
                   ease: "easeOut",
                 },
               }}
-              className="bg-gradient-to-r from-slate-400 to-white bg-clip-text py-2 text-center font-['Expletus_Sans'] text-8xl font-extrabold normal-case text-transparent md:hidden md:py-4 md:text-8xl lg:mt-10"
+              className="bg-gradient-to-r from-slate-400 to-white bg-clip-text py-2 text-center font-['Expletus_Sans'] text-7xl font-extrabold normal-case text-transparent md:hidden md:py-4 md:text-8xl lg:mt-10"
             >
               SALARI
             </motion.h1>

@@ -32,7 +32,7 @@ const ContactMe = () => {
         </p>
         <a
           href="mailto:ayoob.salari@sydney.edu.au"
-          className="group relative my-6 inline-flex items-center justify-center overflow-hidden rounded-md px-6 py-3 font-bold normal-case text-white shadow-2xl md:btn-wide"
+          className="group relative my-6 inline-flex w-40 items-center justify-center overflow-hidden rounded-md px-6 py-3 font-bold normal-case text-white shadow-2xl md:btn-wide"
         >
           <span className="absolute inset-0 h-full w-full bg-gradient-to-br from-slate-900 via-cyan-700 to-sky-400 opacity-0 transition duration-300 ease-out group-hover:opacity-100"></span>
 
