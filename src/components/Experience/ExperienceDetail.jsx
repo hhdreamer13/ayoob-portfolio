@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 
 const cardAnimations = {
   hidden: {
-    x: "-100vw",
+    // x: "-100vw",
+    y: "100vh",
   },
   visible: {
-    x: 0,
+    // x: 0,
+    y: 0,
     transition: {
       duration: 0.8,
       delay: 0.1,
