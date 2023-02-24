@@ -54,7 +54,7 @@ const Header = () => {
         when: "beforeChildren",
         delayChildren: 0.3,
         staggerChildren: 0.1,
-        staggerDirection: -1,
+        staggerDirection: 1,
       },
     },
   };
