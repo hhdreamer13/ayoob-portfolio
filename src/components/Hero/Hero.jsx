@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const headingAnimation = {
   hidden: {
-    y: -50,
+    y: -20,
     opacity: 0,
   },
   visible: {
@@ -13,7 +13,7 @@ const headingAnimation = {
 };
 const paragraphAnimation = {
   hidden: {
-    y: 20,
+    y: 30,
     opacity: 0,
   },
   visible: {
@@ -22,12 +22,29 @@ const paragraphAnimation = {
     transition: {
       type: "spring",
       duration: 2,
-      delay: 1.5,
+      delay: 2.5,
       ease: [0, 0.71, 0.2, 1.01],
       opacity: {
         duration: 1.8,
-        ease: "easeOut",
+        ease: "easeIn",
       },
+    },
+  },
+};
+const particlesAnimations = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: [
+      0.2, 0, 0, 1, 0, 0, 0.1, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0, 1, 0, 0, 0, 0, 1,
+      0, 0, 0.5, 1,
+    ],
+    transition: {
+      delay: 0.2,
+      duration: 1.5,
+      // ease: "easeInOut",
+      ease: [0, 0.2, 0.3, 0.4, 0.7, 1.01],
     },
   },
 };
@@ -44,8 +61,8 @@ const Hero = () => {
               animate="visible"
               transition={{
                 type: "tween",
-                duration: 1.2,
-                delay: 0.8,
+                duration: 2,
+                delay: 1.6,
                 ease: [0, 0.71, 0.2, 1.01],
                 opacity: {
                   duration: 1.8,
@@ -54,7 +71,8 @@ const Hero = () => {
               }}
               className="hidden bg-gradient-to-r from-slate-400 to-white bg-clip-text py-2 font-['Expletus_Sans'] text-8xl font-extrabold normal-case text-transparent md:block md:py-4 md:text-8xl lg:mt-10"
             >
-              AYOOB SALARI
+              <span className="text-9xl">A</span>YOOB{" "}
+              <span className="text-9xl">S</span>ALARI
             </motion.h1>
             <motion.h1
               variants={headingAnimation}
@@ -62,8 +80,8 @@ const Hero = () => {
               animate="visible"
               transition={{
                 type: "tween",
-                duration: 1.2,
-                delay: 0.3,
+                duration: 2,
+                delay: 1.6,
                 ease: [0, 0.71, 0.2, 1.01],
                 opacity: {
                   duration: 1.8,
@@ -80,8 +98,8 @@ const Hero = () => {
               animate="visible"
               transition={{
                 type: "tween",
-                duration: 1.2,
-                delay: 0.8,
+                duration: 2,
+                delay: 1.6,
                 ease: [0, 0.71, 0.2, 1.01],
                 opacity: {
                   duration: 1.8,
@@ -113,9 +131,14 @@ const Hero = () => {
             </motion.div>
           </article>
         </div>
-        <div className="absolute -top-10 left-0 -z-30 w-full sm:left-20 sm:w-3/4 md:left-60 md:w-1/2 lg:top-0 lg:left-1/2 lg:w-1/2">
+        <motion.div
+          className="absolute -top-10 left-0 -z-30 w-full sm:left-20 sm:w-3/4 md:left-60 md:w-1/2 lg:top-0 lg:left-1/2 lg:w-1/2"
+          variants={particlesAnimations}
+          initial="hidden"
+          animate="visible"
+        >
           <BackgroundAnimation />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

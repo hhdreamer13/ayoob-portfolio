@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const navItems = ["About", "Education", "Publication", "Experience", "Contact"];
 
@@ -36,66 +37,116 @@ const Header = () => {
   //   document.querySelector("html").setAttribute("data-theme", theme);
   // }, [theme]);
 
+  const containerAnimations = {
+    hidden: {
+      y: -50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        delay: 2,
+        ease: "easeIn",
+        type: "spring",
+        stiffnes: 200,
+        when: "beforeChildren",
+        delayChildren: 0.3,
+        staggerChildren: 0.1,
+        staggerDirection: -1,
+      },
+    },
+  };
+  const itemsAnimations = {
+    hidden: {
+      // y: -50,
+      // x: -10,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5, delay: 3.3, ease: "easeInOut" }}
       className={`${navBarClass} ${isOpen ? "bg-base-light" : "bg-base-200"}`}
     >
-      <Link
-        to="/"
-        className="self-start"
-        onClick={() => {
-          scrollTop();
-          // toggleTheme();
-        }}
-      >
-        <svg
-          className="ml-1 fill-stone-400 duration-300 hover:fill-slate-200"
-          version="1.0"
-          xmlns="http://www.w3.org/2000/svg"
-          width="30.000000pt"
-          height="30.000000pt"
-          viewBox="0 0 512.000000 512.000000"
-          preserveAspectRatio="xMidYMid meet"
+      <div>
+        <Link
+          to="/"
+          className="self-start"
+          onClick={() => {
+            scrollTop();
+            // toggleTheme();
+          }}
         >
-          <g
-            transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-            // fill="#ffffff"
-            stroke="none"
+          <svg
+            className="ml-1 fill-stone-400 duration-300 hover:fill-slate-200"
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30.000000pt"
+            height="30.000000pt"
+            viewBox="0 0 512.000000 512.000000"
+            preserveAspectRatio="xMidYMid meet"
           >
-            <path
-              d="M2644 4465 c-147 -77 -251 -176 -373 -359 -461 -687 -1512 -2859
--1548 -3196 -9 -85 17 -159 75 -219 69 -71 155 -89 258 -54 68 23 154 113 224
-233 120 207 543 641 805 827 165 116 398 246 590 328 61 26 112 50 115 53 3 2
--35 2 -85 -1 -104 -7 -242 -40 -370 -89 -133 -52 -133 -52 -90 -23 115 75 651
-302 670 283 2 -2 33 -107 70 -233 132 -461 271 -845 360 -996 117 -200 316
--327 584 -374 85 -15 366 -19 426 -6 l30 6 -25 18 c-213 149 -494 638 -752
-1307 -46 121 -158 434 -155 436 14 10 455 88 565 100 77 8 80 27 12 61 -86 43
--262 51 -562 26 l-76 -6 -31 99 c-70 229 -130 447 -251 924 -185 728 -221 829
--313 870 -58 27 -76 25 -153 -15z m106 -1560 c54 -220 97 -401 96 -402 -1 -1
--72 -18 -156 -38 -182 -41 -365 -91 -544 -146 -70 -22 -129 -39 -131 -37 -4 6
-388 875 526 1163 l53 110 29 -125 c16 -69 73 -305 127 -525z"
-            />
-          </g>
-        </svg>
-      </Link>
-      <div
+            <g
+              transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+              // fill="#ffffff"
+              stroke="none"
+            >
+              <path
+                d="M2644 4465 c-147 -77 -251 -176 -373 -359 -461 -687 -1512 -2859
+        -1548 -3196 -9 -85 17 -159 75 -219 69 -71 155 -89 258 -54 68 23 154 113 224
+        233 120 207 543 641 805 827 165 116 398 246 590 328 61 26 112 50 115 53 3 2
+        -35 2 -85 -1 -104 -7 -242 -40 -370 -89 -133 -52 -133 -52 -90 -23 115 75 651
+        302 670 283 2 -2 33 -107 70 -233 132 -461 271 -845 360 -996 117 -200 316
+        -327 584 -374 85 -15 366 -19 426 -6 l30 6 -25 18 c-213 149 -494 638 -752
+        1307 -46 121 -158 434 -155 436 14 10 455 88 565 100 77 8 80 27 12 61 -86 43
+        -262 51 -562 26 l-76 -6 -31 99 c-70 229 -130 447 -251 924 -185 728 -221 829
+        -313 870 -58 27 -76 25 -153 -15z m106 -1560 c54 -220 97 -401 96 -402 -1 -1
+        -72 -18 -156 -38 -182 -41 -365 -91 -544 -146 -70 -22 -129 -39 -131 -37 -4 6
+        388 875 526 1163 l53 110 29 -125 c16 -69 73 -305 127 -525z"
+              />
+            </g>
+          </svg>
+        </Link>
+      </div>
+      <motion.div
+        variants={containerAnimations}
+        initial="hidden"
+        animate="visible"
         className={
           isOpen ? "flex w-screen flex-col gap-4 md:inline" : "hidden md:inline"
         }
       >
         {navItems.map((item) => {
           return (
-            <NavLink
-              onClick={scrollHandle}
-              className="mx-0.5 inline-flex items-center justify-center rounded-md py-4 px-4 text-center font-mono text-sm text-stone-400 transition duration-500 hover:text-slate-50"
+            <motion.div
               key={item}
-              to={{ hash: `#${item.toLowerCase()}` }}
+              className="inline-block"
+              variants={itemsAnimations}
             >
-              {item}
-            </NavLink>
+              <NavLink
+                onClick={scrollHandle}
+                className="mx-0.5 inline-flex items-center justify-center rounded-md py-4 px-4 text-center font-mono text-sm text-stone-400 transition duration-500 hover:text-slate-50"
+                to={{ hash: `#${item.toLowerCase()}` }}
+              >
+                {item}
+              </NavLink>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
       {/* Mobile navbar toggle button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -127,7 +178,7 @@ const Header = () => {
           </div>
         </div>
       </button>
-    </nav>
+    </motion.nav>
   );
 };
 
