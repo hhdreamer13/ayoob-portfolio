@@ -81,10 +81,9 @@ const Header = () => {
       transition={{ duration: 1.5, delay: 3.3, ease: "easeInOut" }}
       className={`${navBarClass} ${isOpen ? "bg-base-light" : "bg-base-200"}`}
     >
-      <div>
+      <div className="self-start">
         <Link
           to="/"
-          className="self-start"
           onClick={() => {
             scrollTop();
             // toggleTheme();
