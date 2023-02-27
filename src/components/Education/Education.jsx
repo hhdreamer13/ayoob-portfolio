@@ -13,11 +13,11 @@ const sectionAnimation = {
     opacity: 1,
     transition: {
       type: "spring",
-      duration: 1,
+      duration: 0.8,
       delay: 0.3,
       ease: [0, 0.71, 0.2, 1.01],
       opacity: {
-        duration: 1.1,
+        duration: 1,
         ease: "easeOut",
       },
     },
@@ -26,6 +26,12 @@ const sectionAnimation = {
 
 const Education = () => {
   const [activeTabId, setActiveTabId] = useState(0);
+
+  const underlineClass =
+    "absolute bottom-0 h-1 w-16 rounded-md bg-slate-200 animation-all duration-500 ease-in";
+
+  const underlineLeft = ["left-0", "left-16", "left-32"];
+
   return (
     <div
       id="education"
@@ -35,12 +41,15 @@ const Education = () => {
         <h2 className="my-6 py-6 font-['Cambay'] text-4xl text-slate-300">
           My Education
         </h2>
-        <div id="tabs-container">
+        <div
+          className="flex flex-col items-center md:items-start"
+          id="tabs-container"
+        >
           <div
             id="tabs-list"
             role="tablist"
             aria-label="Education Tab"
-            className="mb-10 flex justify-center md:block"
+            className="relative mb-10 h-16 w-48 items-center justify-center md:block"
           >
             {educationList.map(({ degree }, i) => {
               return (
@@ -48,10 +57,12 @@ const Education = () => {
                   key={i}
                   className={
                     activeTabId === i
-                      ? "after:h10 relative p-4 uppercase text-slate-100 after:absolute after:bottom-0 after:left-0 after:block after:w-full after:origin-center after:scale-x-100 after:border-b-4 after:border-solid after:border-slate-100 after:pt-2 after:transition after:content-['']"
-                      : "after:h10 relative p-4 uppercase text-slate-400 duration-300 after:absolute after:bottom-0 after:left-0 after:block after:w-full after:origin-right after:scale-x-0 after:border-b-4 after:border-solid after:border-slate-100 after:pt-2 after:transition after:duration-300 after:content-[''] hover:text-slate-100 hover:after:origin-left hover:after:scale-x-100"
+                      ? "h-16 w-16 text-slate-200"
+                      : "h-16 w-16 text-slate-500 duration-300 hover:text-slate-300"
                   }
-                  onClick={() => setActiveTabId(i)}
+                  onClick={() => {
+                    setActiveTabId(i);
+                  }}
                   id={`tab-${i}`}
                   role="tab"
                   tabIndex={activeTabId === i ? "0" : "-1"}
@@ -59,10 +70,13 @@ const Education = () => {
                   aria-controls={`panel-${i}`}
                 >
                   <span className="font-mono normal-case">{degree}</span>
-                  <div className="absolute bottom-0 left-0 block h-1 w-full bg-slate-700"></div>
                 </button>
               );
             })}
+            <div
+              id="underline"
+              className={`${underlineClass} ${underlineLeft[activeTabId]}`}
+            ></div>
           </div>
           <div className="font-['Roboto'] text-lg sm:text-xl">
             {educationList.map(
