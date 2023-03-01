@@ -268,7 +268,7 @@ const Header = ({ setShowModal }) => {
               >
                 <NavLink
                   onClick={scrollHandle}
-                  className="mx-0.5 my-5 inline-flex items-center justify-center rounded-md py-4 px-4 text-center font-mono text-xl text-stone-400 transition duration-500 hover:text-slate-50"
+                  className="mx-0.5 my-4 inline-flex items-center justify-center rounded-md py-3 px-3 text-center font-mono text-xl text-stone-400 transition duration-500 hover:text-slate-50"
                   to={{ hash: `#${item.toLowerCase()}` }}
                 >
                   {item}
