@@ -88,7 +88,7 @@ const Experience = () => {
             opacity: 0,
           }}
           animate={{
-            opacity: [0, 1, 1, 1, 0],
+            opacity: [1, 0, 0, 0, 1],
           }}
           transition={{
             duration: 4,
