@@ -49,6 +49,17 @@ const Modal = ({ showModal, setShowModal }) => {
             <div className="mt-10 flex justify-center">
               <a
                 onClick={() => setShowModal(false)}
+                href="/Academic_CV.pdf"
+                target="_blank"
+                className="group relative mx-3 w-24 overflow-hidden rounded bg-slate-900 p-2 text-stone-500 ring-1 ring-slate-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:text-slate-50 hover:ring-1 hover:ring-slate-500"
+              >
+                <span className="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40"></span>
+                <span className="relative font-['Roboto'] text-sm">
+                  Academic
+                </span>
+              </a>
+              <a
+                onClick={() => setShowModal(false)}
                 href="/Functional_CV.pdf"
                 target="_blank"
                 className="group relative mx-3 w-24 overflow-hidden rounded bg-slate-900 p-2 text-stone-500 ring-1 ring-slate-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:text-slate-50 hover:ring-1 hover:ring-slate-500"
@@ -56,17 +67,6 @@ const Modal = ({ showModal, setShowModal }) => {
                 <span className="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40"></span>
                 <span className="relative font-['Roboto'] text-sm">
                   Functional
-                </span>
-              </a>
-              <a
-                onClick={() => setShowModal(false)}
-                href="/Educational_CV.pdf"
-                target="_blank"
-                className="group relative mx-3 w-24 overflow-hidden rounded bg-slate-900 p-2 text-stone-500 ring-1 ring-slate-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:text-slate-50 hover:ring-1 hover:ring-slate-500"
-              >
-                <span className="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40"></span>
-                <span className="relative font-['Roboto'] text-sm">
-                  Educational
                 </span>
               </a>
             </div>

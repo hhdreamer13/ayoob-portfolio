@@ -47,7 +47,7 @@ const Research = () => {
             {showingItems.map(({ title, authors, booktitle, link }, i) => {
               return (
                 <div key={i}>
-                  <div className="group card m-5 bg-[#19263F] shadow-md duration-500 hover:-translate-y-2">
+                  <div className="group card m-5 bg-[#19263F] shadow-md duration-300 hover:-translate-y-2">
                     <div className="card-body">
                       <p className="font-['Roboto'] text-slate-300">
                         {" "}

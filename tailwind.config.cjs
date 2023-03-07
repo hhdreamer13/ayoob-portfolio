@@ -21,15 +21,6 @@ module.exports = {
             background: "#112240",
           },
         },
-        pastel: {
-          ...require("daisyui/src/colors/themes")["[data-theme=pastel]"],
-          ".color-primary": {
-            color: "#ffffff",
-          },
-          ".bg-base-light": {
-            background: "#112240",
-          },
-        },
       },
     ],
   },
