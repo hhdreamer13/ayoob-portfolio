@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { experienceData } from "./experienceData";
 
@@ -30,6 +30,20 @@ const Experience = () => {
       : null;
   }, [location]);
 
+  const scrollRef = useRef(null);
+
+  const handleCarouselScroll = (element, speed, distance, step) => {
+    let scrollAmount = 0;
+    console.log(element);
+    const slideTimer = setInterval(() => {
+      element.scrollLeft += step;
+      scrollAmount += Math.abs(step);
+      if (scrollAmount >= distance) {
+        clearInterval(slideTimer);
+      }
+    }, speed);
+  };
+
   return (
     <div
       id="experience"
@@ -41,7 +55,8 @@ const Experience = () => {
         </h2>
         <div
           id="carousel-container"
-          className="no-scrollbar flex h-96 w-72 snap-x items-center overflow-scroll rounded-2xl bg-[linear-gradient(to_right_top,#051937,#042643,#05334f,#0b4059,#164e63)] px-4 shadow-inner shadow-slate-900 md:h-[500px] md:w-2/3"
+          ref={scrollRef}
+          className="no-scrollbar flex h-96 w-72 items-center overflow-scroll rounded-2xl bg-[linear-gradient(to_right_top,#051937,#042643,#05334f,#0b4059,#164e63)] px-4 shadow-inner shadow-slate-900 md:h-[500px] md:w-2/3"
         >
           {experienceData.map(({ id, title, location, badge, year, image }) => {
             return (
@@ -83,6 +98,43 @@ const Experience = () => {
             );
           })}
         </div>
+        <div id="carousel-scroll" className="mt-4 hidden sm:flex">
+          <button
+            className="btn-ghost btn-sm btn mx-6"
+            onClick={() =>
+              handleCarouselScroll(scrollRef.current, 25, 100, -10)
+            }
+          >
+            <svg
+              className="rotate-180"
+              width="20px"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#cbd5e1"
+                d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z"
+              />
+            </svg>
+          </button>
+          <button
+            className="btn-ghost btn-sm btn mx-6"
+            onClick={() => handleCarouselScroll(scrollRef.current, 25, 100, 10)}
+          >
+            <svg
+              width="20px"
+              height="20px"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#cbd5e1"
+                d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z"
+              />
+            </svg>
+          </button>
+        </div>
         <motion.svg
           initial={{
             opacity: 0,
@@ -95,7 +147,7 @@ const Experience = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="rotate-90"
+          className="rotate-90 sm:hidden"
           fill="#334155"
           height="50px"
           width="50px"
