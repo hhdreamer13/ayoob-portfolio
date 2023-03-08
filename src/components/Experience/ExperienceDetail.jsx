@@ -2,18 +2,16 @@ import { Link, useParams } from "react-router-dom";
 import { experienceData } from "./experienceData";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import ErrorBoundary from "../ErrorBoundaries/ErrorBoundaries";
 
 const cardAnimations = {
   hidden: {
-    // x: "-100vw",
     y: "100vh",
   },
   visible: {
-    // x: 0,
     y: 0,
     transition: {
       duration: 0.8,
-      delay: 0.1,
       type: "spring",
       mass: 0.5,
       stiffness: 100,
@@ -82,4 +80,10 @@ const ExperienceDetail = () => {
   );
 };
 
-export default ExperienceDetail;
+export default function ExperienceDetailErrorBoundaries(props) {
+  return (
+    <ErrorBoundary>
+      <ExperienceDetail {...props} />
+    </ErrorBoundary>
+  );
+}

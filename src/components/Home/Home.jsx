@@ -11,7 +11,6 @@ import Modal from "../Modal/Modal";
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
-  console.log(showModal);
 
   return (
     <Fragment>

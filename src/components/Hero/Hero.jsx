@@ -43,8 +43,8 @@ const particlesAnimations = {
     transition: {
       delay: 0.2,
       duration: 1.5,
-      // ease: "easeInOut",
-      ease: [0, 0.2, 0.3, 0.4, 0.7, 1.01],
+      // ease: "easeIn",
+      ease: [0.2, 0.3, 0.4, 0.7],
     },
   },
 };
