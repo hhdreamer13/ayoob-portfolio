@@ -136,7 +136,7 @@ const Footer = () => {
         </div>
 
         <p className="text-md text-stone-400">
-          Copyright © 2023 <br />
+          Copyright © 2026 <br />
           All rights reserved
         </p>
       </div>
