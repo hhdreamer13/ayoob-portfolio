@@ -287,34 +287,20 @@ const Header = () => {
             );
           })}
           <motion.div
-            className="mx-auto mt-8 flex flex-col text-center"
-            variants={cvAnimations}
+            className="inline-block"
+            variants={navLinkChildrenVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <h3 className="font-mono text-stone-400">Curriculum Vitæ</h3>
-            <div className="mt-4 flex justify-center">
-              <a
-                onClick={() => setToggle(false)}
-                href="/Educational_CV.pdf"
-                target="_blank"
-                className="group relative mx-3 w-24 overflow-hidden rounded bg-slate-900 p-2 text-stone-500 ring-1 ring-slate-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:text-slate-50 hover:ring-1 hover:ring-slate-500"
-              >
-                <span className="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40"></span>
-                <span className="relative font-['Roboto'] text-sm">
-                  Academic
-                </span>
-              </a>
-              <a
-                onClick={() => setToggle(false)}
-                href="/Functional_CV.pdf"
-                target="_blank"
-                className="group relative mx-3 w-24 overflow-hidden rounded bg-slate-900 p-2 text-stone-500 ring-1 ring-slate-700 transition-all duration-300 ease-out hover:bg-gradient-to-r hover:text-slate-50 hover:ring-1 hover:ring-slate-500"
-              >
-                <span className="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40"></span>
-                <span className="relative font-['Roboto'] text-sm">
-                  Functional
-                </span>
-              </a>
-            </div>
+            
+              onClick={() => setToggle(false)}
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="mx-0.5 my-4 inline-flex items-center justify-center rounded-md border-[1px] border-solid border-stone-500 py-3 px-3 text-center font-mono text-xl text-stone-400 transition duration-500 hover:border-gray-700 hover:bg-gray-700 hover:bg-opacity-60 hover:text-slate-50"
+            >
+              Resumé
+            </a>
           </motion.div>
         </motion.div>
       </div>
