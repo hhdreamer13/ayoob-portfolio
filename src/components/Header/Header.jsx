@@ -292,7 +292,7 @@ const Header = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            
+            <a
               onClick={() => setToggle(false)}
               href="/Resume.pdf"
               target="_blank"
