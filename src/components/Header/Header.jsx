@@ -2,11 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const navItems = ["About", "Education", "Publication", "Experience", "Contact"];
+const navItems = ["About", "Experience", "Education", "Publication", "Contact"];
 
 // Classnames shorthand
 
-const Header = ({ setShowModal }) => {
+// const Header = ({ setShowModal }) => {
+const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   // Scroll to a section
@@ -205,13 +206,22 @@ const Header = ({ setShowModal }) => {
             );
           })}
           {/* modal button */}
-          <motion.button
+          <motion.a
+            href="/Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            variants={itemsAnimations}
+            className="mx-0.5 inline-flex h-10 items-center justify-center self-center rounded-md border-[1px] border-solid border-stone-500 p-2 text-center font-mono text-sm text-stone-400 transition duration-500 hover:border-gray-700 hover:bg-gray-700 hover:bg-opacity-60 hover:text-slate-50"
+          >
+            Resumé
+          </motion.a>
+          {/* <motion.button
             onClick={() => setShowModal(true)}
             variants={itemsAnimations}
             className="mx-0.5 inline-flex h-10 items-center justify-center self-center rounded-md border-[1px] border-solid border-stone-500 p-2 text-center font-mono text-sm text-stone-400 transition duration-500 hover:border-gray-700 hover:bg-gray-700 hover:bg-opacity-60 hover:text-slate-50"
           >
             Resumé
-          </motion.button>
+          </motion.button> */}
         </motion.div>
         {/* Mobile navbar toggle button */}
         <button
