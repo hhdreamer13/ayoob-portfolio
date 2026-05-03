@@ -18,9 +18,9 @@ const Home = () => {
       <Modal showModal={showModal} setShowModal={setShowModal} />
       <Hero />
       <AboutMe />
+      <Experience />
       <Education />
       <Research />
-      <Experience />
       <ContactMe />
       <Footer />
     </Fragment>

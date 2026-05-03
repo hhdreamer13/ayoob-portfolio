@@ -2,7 +2,7 @@ export const educationList = [
   {
     degree: "PhD",
     title: "Electrical Engineering",
-    year: "2019-present",
+    year: "2019-2023",
     lab: "Centre of IoT and Telecommunication, School of Electrical and Information Engineering",
     university: "The University of Sydney",
     location: "Sydney - Australia",
@@ -15,13 +15,18 @@ export const educationList = [
     url: "https://www.sydney.edu.au/engineering/our-research/internet-of-things/centre-for-iot-and-telecommunications.html",
     honours: [
       {
-        title: "The University of Sydney Postgraduate Scholarship (Full Scholarship)",
+        title: "The University of Sydney Postgraduate Scholarship (Ph.D.)",
         year: "2019-2023",
       },
       {
         title:
           "The University of Sydney Postgraduate Research Support Scholarship (PRSS)",
-        year: "2022",
+        year: "2022-2023",
+      },
+      {
+        title:
+          "Paulette Isabel Jones Scholarship ",
+        year: "2023",
       },
     ],
   },
@@ -31,7 +36,7 @@ export const educationList = [
     year: "2014-2016",
     lab: "Wireless Communication Systems Laboratory, School of Electrical Engineering",
     university: "Korea Advance Institute of Science and Technology (KAIST)",
-    location: "Daejeon - Republic of Korea",
+    location: "Daejeon - South Korea",
     thesis: {
       title:
         "Maximizing Received Energy in Magnetic Resonance Wireless Power Transfer Using Feedback",
@@ -43,7 +48,7 @@ export const educationList = [
     url: "https://www.kaist.ac.kr/en/",
     honours: [
       {
-        title: "KAIST Postgraduate Scholarship (Full Scholarship)",
+        title: "KAIST Postgraduate Scholarship (M.Sc.)",
         year: "2014-2016",
       },
     ],

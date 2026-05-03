@@ -1,13 +1,23 @@
 const AboutMe = () => {
   const competences = [
     "Python",
-    "Matlab",
+    "MATLAB",
+    "C",
+    "PyTorch",
+    "Transformers",
+    "Time-Series Analysis",
+    "NVIDIA Brev Compute",
+    "NVIDIA Jetson Network",
+    "TensorRT",
+    "LTE/5G Baseband Capture",
+    "Signal Processing",
+    "SDR/USRP",
     "HFSS",
     "CST",
     "OrCAD",
-    "SPICE",
-    "ThingsBoard",
-    "Node-Red",
+    "Linux",
+    "Git",
+    "Database",
   ];
 
   return (
@@ -26,15 +36,13 @@ const AboutMe = () => {
             About Me
           </h2>
           <p className="my-2 mb-4 font-['Roboto'] text-xl leading-loose text-slate-400 md:text-lg md:leading-loose">
-            I have a Bachelor&apos;s degree from Iran University of Science and
-            Technology and a Master&apos;s degree from Korea Advanced Institute
-            of Science and Technology, both in Electrical Engineering. After
-            completing my Master&apos;s degree, I worked as an engineer at
-            FWUTech for over a year, gaining valuable field experience. I am
-            currently a PhD candidate at the prestigious University of Sydney,
-            where my research focuses on machine learning applications in 6G. I
-            expect to finish my PhD by June 2023, which will further solidify my
-            skills and expertise in this field.
+            My engineering career began at the physical layer of wireless systems, where I designed and patented circuitry to improve power transfer efficiency. This foundational hardware experience grounds my current machine learning work in reality; I understand the physical constraints governing radio frequency signals and sensor networks before conceptualising any software models.
+          </p>
+          <p className="my-2 mb-4 font-['Roboto'] text-xl leading-loose text-slate-400 md:text-lg md:leading-loose">
+            I subsequently transitioned into the commercial telecommunications sector, focusing on data infrastructure. Tasked with extracting intelligence from live mobile networks, I built automated extraction pipelines to process raw feeds from varied support systems. This required structuring high-volume metrics into reliable reporting tools that dictated immediate physical network adjustments. 
+          </p>
+          <p className="my-2 mb-4 font-['Roboto'] text-xl leading-loose text-slate-400 md:text-lg md:leading-loose">
+            Over the past six years, my focus has shifted entirely to deploying deep learning architectures for environmental and telecommunications applications. Working alongside industry partners like NVIDIA and TPG Telecom, I train Transformer networks on cloud compute clusters and push the resulting inference engines directly onto field-deployed edge devices. This ensures analytical models survive the transition from controlled laboratory environments to volatile physical deployments. 
           </p>
           <ul className="grid h-auto w-auto list-none grid-cols-2 pl-0 font-mono text-slate-400 sm:grid-cols-3">
             {competences.map((c) => {

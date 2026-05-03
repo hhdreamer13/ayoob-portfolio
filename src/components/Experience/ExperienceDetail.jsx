@@ -57,9 +57,25 @@ const ExperienceDetail = () => {
           </div>
           <article className="prose text-justify font-['Roboto'] text-lg sm:text-xl">
             <h2 className="text-left text-slate-300">{result.title}</h2>
-            <p className=" text-lg leading-loose text-slate-400 md:text-lg md:leading-loose">
-              {result.description}
-            </p>
+            {result.summary ? (
+              <>
+                <p className="text-lg leading-loose text-slate-400 md:text-lg md:leading-loose">
+                  {result.summary}
+                </p>
+
+                {result.highlights && result.highlights.length > 0 && (
+                  <ul className="list-disc space-y-3 pl-6 text-lg leading-loose text-slate-400 md:text-lg md:leading-loose">
+                    {result.highlights.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </>
+            ) : (
+              <p className="text-lg leading-loose text-slate-400 md:text-lg md:leading-loose">
+                {result.description}
+              </p>
+            )}
             <p className="font-['Roboto'] text-base italic text-stone-400 ">
               {result.location} - {result.year}
             </p>

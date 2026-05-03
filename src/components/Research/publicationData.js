@@ -1,15 +1,27 @@
 export const publicationList = [
   {
     title:
+      "Wavelet-Guided Water-Level Estimation for ISAC",
+    authors:
+      "A. Salari, K. Wu, K. F. Masood, Y. J. Guo, and J. A. Zhang",
+    booktitle: {
+      name: "journal",
+      titre: "IEEE Sensors Journal",
+      year: "2026",
+    },
+    link: "https://ieeexplore.ieee.org/abstract/document/11488452/authors#authors",
+  },
+  {
+    title:
       "Design and Analysis of Clustering-Based Joint Channel Estimation and Signal Detection for NOMA",
     authors:
       "A. Salari, M. Shirvanimoghaddam, B. Shahab, R. Arablouei, and S. Johnson",
     booktitle: {
       name: "journal",
-      titre: "Submitted to IEEE Transaction on Vehicular Technology",
+      titre: "IEEE Transaction on Vehicular Technology",
       year: "2023",
     },
-    link: "https://arxiv.org/abs/2201.06245",
+    link: "https://ieeexplore.ieee.org/abstract/document/10246432",
   },
   {
     title:
@@ -17,10 +29,10 @@ export const publicationList = [
     authors: "A. Salari, M. Shirvanimoghaddam, B. Vucetic and S. Johnson",
     booktitle: {
       name: "journal",
-      titre: "Submitted to IEEE Internet of Things Journal",
+      titre: "IEEE Internet of Things Journal",
       year: "2023",
     },
-    link: "https://arxiv.org/abs/2205.04672",
+    link: "https://ieeexplore.ieee.org/abstract/document/10214500",
   },
   {
     title:

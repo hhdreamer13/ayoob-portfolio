@@ -117,17 +117,14 @@ const Hero = () => {
               className="my-10 text-justify font-['Roboto'] text-xl leading-loose text-slate-400 md:text-2xl md:leading-loose"
             >
               <p className="py-4">
-                Welcome to my website! My name is Ayoob, and I have developed
-                extensive experience in electrical engineering, thanks to my
-                education and work in the communication systems and electrical
-                engineering fields.
+                Applied Machine Learning Engineer and Data Scientist with a ten-year track record spanning commercial telecommunications, physical hardware R&D and advanced artificial intelligence. Combines a rigorous academic foundation with practical experience deploying deep learning inference engines onto edge hardware. Proven expertise in building multi-terabyte data pipelines and engineering Transformer models to solve physical-world challenges. Experience grounded in strong domain knowledge of 5G infrastructure, IoT communications and RF propagation, validated by commercial intelligence roles and patented hardware circuit design. A capable technical mentor and communicator, focused on translating complex mathematical theories into robust, production-ready solutions for the telecommunications, deep tech and defence sectors.
               </p>
-              <p className="py-4">
+              {/* <p className="py-4">
                 I possess a passion for research and development and have an
                 insatiable desire to learn and gain experience. I relish the
                 opportunity to network with people and welcome any direct rebuke
                 or advice that can help me grow in my profession.
-              </p>
+              </p> */}
             </motion.div>
           </article>
         </div>
